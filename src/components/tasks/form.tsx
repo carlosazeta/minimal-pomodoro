@@ -14,27 +14,39 @@ import {
 	FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
+import { useTasks } from '@/context/tasksContext'
+
+type Task = {
+	id: string
+	title: string
+}
 
 const formSchema = z.object({
 	title: z
 		.string()
-		.min(1, {
+		.min(2, {
 			message: 'The task must be at least 2 characters.',
 		})
 		.max(50),
 })
 
-function onSubmit(values: z.infer<typeof formSchema>) {
-	console.log(values)
-}
-
 export function TasksForm() {
+	const { addTask } = useTasks()
+
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
 			title: '',
 		},
 	})
+
+	function onSubmit(values: z.infer<typeof formSchema>) {
+		const newTask: Task = {
+			id: crypto.randomUUID(),
+			title: values.title,
+		}
+		addTask(newTask)
+	}
 
 	return (
 		<Form {...form}>
@@ -44,9 +56,9 @@ export function TasksForm() {
 					name='title'
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel className='sr-only'>Task</FormLabel>
+							<FormLabel className='sr-only'>Task input</FormLabel>
 							<FormControl>
-								<Input placeholder='Add your Task' {...field} />
+								<Input placeholder='Write here your task ...' {...field} />
 							</FormControl>
 							<FormDescription className='sr-only'>
 								Enter a brief description of your task.
@@ -56,7 +68,7 @@ export function TasksForm() {
 					)}
 				/>
 				<Button type='submit' className='mx-auto'>
-					Submit
+					Add
 				</Button>
 			</form>
 		</Form>
