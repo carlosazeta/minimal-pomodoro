@@ -1,7 +1,10 @@
+import { TasksForm } from '@/components/tasks/form'
+
 export default function TasksPage() {
 	return (
 		<section>
-			<h1>This is the tasks page</h1>
+			<h1>Tasks</h1>
+			<TasksForm />
 		</section>
 	)
 }
