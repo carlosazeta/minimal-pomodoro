@@ -16,11 +16,6 @@ import {
 import { Input } from '@/components/ui/input'
 import { useTasks } from '@/context/tasksContext'
 
-type Task = {
-	id: string
-	title: string
-}
-
 const formSchema = z.object({
 	title: z
 		.string()

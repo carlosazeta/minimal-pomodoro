@@ -2,17 +2,6 @@
 
 import React, { createContext, useState, useContext } from 'react'
 
-type Task = {
-	id: string
-	title: string
-	// ...otros campos
-}
-
-interface TasksContextType {
-	tasks: Task[]
-	addTask: (task: Task) => void
-}
-
 const TasksContext = createContext<TasksContextType | undefined>(undefined)
 
 export function useTasks() {
