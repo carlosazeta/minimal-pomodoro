@@ -56,7 +56,7 @@ export function TasksForm() {
 								<FormLabel className='sr-only'>Task input</FormLabel>
 								<FormControl>
 									<Input
-										placeholder='Write here your task ...'
+										placeholder='Write here your task...'
 										{...field}
 										className='self-center'
 									/>
