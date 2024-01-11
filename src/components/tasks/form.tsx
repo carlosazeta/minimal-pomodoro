@@ -41,6 +41,7 @@ export function TasksForm() {
 			title: values.title,
 		}
 		addTask(newTask)
+		form.reset()
 	}
 
 	return (
