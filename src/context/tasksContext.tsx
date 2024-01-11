@@ -1,6 +1,9 @@
 'use client'
 
 import React, { createContext, useState, useContext } from 'react'
+interface TasksProviderProps {
+	children: React.ReactNode
+}
 
 const TasksContext = createContext<TasksContextType | undefined>(undefined)
 
@@ -12,15 +15,22 @@ export function useTasks() {
 	return context
 }
 
-interface TasksProviderProps {
-	children: React.ReactNode
+const getTasksFromLocalStorage = () => {
+	const savedTasks = localStorage.getItem('tasks')
+	return savedTasks ? JSON.parse(savedTasks) : []
+}
+
+const saveTasksToLocalStorage = (tasks: Task[]) => {
+	localStorage.setItem('tasks', JSON.stringify(tasks))
 }
 
 export function TasksProvider({ children }: TasksProviderProps) {
-	const [tasks, setTasks] = useState<Task[]>([])
+	const [tasks, setTasks] = useState<Task[]>(() => getTasksFromLocalStorage())
 
 	const addTask = (task: Task) => {
-		setTasks((prevTasks) => [...prevTasks, task])
+		const newTasks = [...tasks, task]
+		setTasks(newTasks)
+		saveTasksToLocalStorage(newTasks)
 	}
 
 	return (
