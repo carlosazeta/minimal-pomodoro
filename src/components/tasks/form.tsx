@@ -46,25 +46,31 @@ export function TasksForm() {
 	return (
 		<Form {...form}>
 			<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
-				<FormField
-					control={form.control}
-					name='title'
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel className='sr-only'>Task input</FormLabel>
-							<FormControl>
-								<Input placeholder='Write here your task ...' {...field} />
-							</FormControl>
-							<FormDescription className='sr-only'>
-								Enter a brief description of your task.
-							</FormDescription>
-							<FormMessage />
-						</FormItem>
-					)}
-				/>
-				<Button type='submit' className='mx-auto'>
-					Add
-				</Button>
+				<div className='flex items-center'>
+					<FormField
+						control={form.control}
+						name='title'
+						render={({ field }) => (
+							<FormItem className='flex-grow space-y-0 max-w-80'>
+								<FormLabel className='sr-only'>Task input</FormLabel>
+								<FormControl>
+									<Input
+										placeholder='Write here your task ...'
+										{...field}
+										className='self-center'
+									/>
+								</FormControl>
+								<FormDescription className='sr-only'>
+									Enter a brief description of your task.
+								</FormDescription>
+								<FormMessage />
+							</FormItem>
+						)}
+					/>
+					<Button type='submit' className='ml-2'>
+						Add
+					</Button>
+				</div>
 			</form>
 		</Form>
 	)
