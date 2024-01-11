@@ -3,6 +3,8 @@ type Task = {
 	title: string
 }
 
+type TaskId = Task['id']
+
 interface TasksContextType {
 	tasks: Task[]
 	addTask: (task: Task) => void
