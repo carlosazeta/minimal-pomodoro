@@ -29,11 +29,14 @@ export default function NavLinks() {
 					<Link
 						key={link.name}
 						href={link.href}
-						className={`flex h-[48px] grow items-center justify-center gap-2 p-3 text-sm font-medium rounded-md text-gray-200 hover:bg-slate-950	 md:flex-none md:justify-start md:p-2 md:px-3 ${
-							isActive ? 'bg-slate-950' : ''
-						}`}
+						className={`flex items-center justify-center gap-2 p-3 text-sm font-medium text-gray-400 hover:text-gray-50
+            md:flex-none md:justify-start md:p-2 md:px-3 
+            h-[48px] grow 
+            transform transition duration-200 ease-in-out 
+            hover:scale-98 hover:translate-y-0.5 hover:translate-x-1 
+            ${isActive ? 'text-gray-100' : ''}`}
 					>
-						<LinkIcon className='w-6 text-gray-200' />
+						<LinkIcon className='w-6' />
 						<p className='hidden md:block'>{link.name}</p>
 					</Link>
 				)
