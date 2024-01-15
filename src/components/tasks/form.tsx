@@ -14,7 +14,7 @@ import {
 	FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { useTasks } from '@/context/tasksContext'
+import { useTasksStore } from '@/store/tasks'
 
 const formSchema = z.object({
 	title: z
@@ -26,7 +26,7 @@ const formSchema = z.object({
 })
 
 export function TasksForm() {
-	const { addTask } = useTasks()
+	const addTask = useTasksStore((state) => state.addTask)
 
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
