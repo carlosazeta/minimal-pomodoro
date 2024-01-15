@@ -1,3 +1,4 @@
+import { CleanTasks } from '@/components/tasks/cleanTasks'
 import { TasksForm } from '@/components/tasks/form'
 import { TaskList } from '@/components/tasks/list'
 
@@ -11,6 +12,7 @@ export default function TasksPage() {
 			<div className='mt-10'>
 				<TaskList />
 			</div>
+			<CleanTasks />
 		</section>
 	)
 }

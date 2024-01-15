@@ -4,6 +4,7 @@ import { persist } from 'zustand/middleware'
 interface State {
 	tasks: Task[]
 	addTask: (task: Task) => void
+	deleteAllTasks: () => void
 }
 
 export const useTasksStore = create<State>()(
@@ -16,6 +17,11 @@ export const useTasksStore = create<State>()(
 					set((state) => {
 						const newTasks = [...state.tasks, task]
 						return { tasks: newTasks }
+					}),
+
+				deleteAllTasks: () =>
+					set(() => {
+						return { tasks: [] }
 					}),
 			}
 		},
