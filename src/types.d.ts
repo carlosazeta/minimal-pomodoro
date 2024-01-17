@@ -9,3 +9,5 @@ interface TasksContextType {
 	tasks: Task[]
 	addTask: (task: Task) => void
 }
+
+type Mode = 'pomodoro' | 'short' | 'long'
