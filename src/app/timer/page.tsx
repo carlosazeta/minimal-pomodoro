@@ -8,7 +8,7 @@ import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 const getInitialTime = (mode: Mode) => {
 	const modeDurations = {
 		pomodoro: 25 * 60,
-		short: 5 * 60,
+		short: 1 * 60,
 		long: 15 * 60,
 	}
 	return modeDurations[mode]
@@ -26,15 +26,14 @@ export default function TimerPage() {
 		setIsActive(!isActive)
 	}
 
-	// Actualizar la URL al cambiar el modo
 	const handleModeChange = (newMode: Mode) => {
-		// Construir la nueva URL con los parámetros de búsqueda actualizados
 		const newSearchParams = new URLSearchParams(searchParams)
 		newSearchParams.set('mode', newMode)
 		const newUrl = `${pathname}?${newSearchParams.toString()}`
 
-		// Navegar a la nueva URL
 		router.push(newUrl)
+
+		setIsActive(false)
 	}
 
 	useEffect(() => {
@@ -62,11 +61,11 @@ export default function TimerPage() {
 			<Button onClick={() => handleModeChange('short')}>Short Break</Button>
 			<Button onClick={() => handleModeChange('long')}>Long Break</Button>
 			<Progress value={progressValue} />
-			<p>
+			<p className='tabular-nums'>
 				Time left: {Math.floor(timeLeft / 60)}:
 				{('0' + (timeLeft % 60)).slice(-2)}
 			</p>
-			<Button onClick={handleStartClick}>Start</Button>
+			<Button onClick={handleStartClick}>{isActive ? 'Stop' : 'Start'}</Button>
 		</section>
 	)
 }
