@@ -16,7 +16,7 @@ const Progress = React.forwardRef<
 			ref={ref}
 			className={cn(
 				'relative flex items-center justify-center',
-				'h-40 w-40 rounded-full bg-slate-800', // Tamaño y forma del círculo
+				'h-80 w-80 rounded-full bg-slate-800', // Tamaño y forma del círculo
 				className
 			)}
 			{...props}
@@ -31,7 +31,6 @@ const Progress = React.forwardRef<
 					transition: 'transform 0.2s ease-out',
 				}}
 			/>
-			<span className='z-10 text-sm font-medium text-white'>{value}%</span>
 		</ProgressPrimitive.Root>
 	)
 })

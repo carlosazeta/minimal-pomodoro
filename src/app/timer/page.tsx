@@ -54,18 +54,24 @@ export default function TimerPage() {
 	}, [timeLeft, mode])
 
 	return (
-		<section>
-			<h1>Timer Page</h1>
-			<p>This is the timer page</p>
-			<Button onClick={() => handleModeChange('pomodoro')}>Pomodoro</Button>
-			<Button onClick={() => handleModeChange('short')}>Short Break</Button>
-			<Button onClick={() => handleModeChange('long')}>Long Break</Button>
-			<Progress value={progressValue} />
-			<p className='tabular-nums'>
-				Time left: {Math.floor(timeLeft / 60)}:
-				{('0' + (timeLeft % 60)).slice(-2)}
-			</p>
-			<Button onClick={handleStartClick}>{isActive ? 'Stop' : 'Start'}</Button>
+		<section className='flex flex-col items-center'>
+			<h1 className='scroll-m-20 mb-8 text-4xl font-bold tracking-tight lg:text-5xl'>
+				Timer
+			</h1>
+			<div className='flex flex-col items-center p-10 rounded-lg border-2 border-slate-700 hover:border-slate-500 transition-all duration-300 '>
+				<div className='flex gap-2 mb-6'>
+					<Button onClick={() => handleModeChange('pomodoro')}>Pomodoro</Button>
+					<Button onClick={() => handleModeChange('short')}>Short Break</Button>
+					<Button onClick={() => handleModeChange('long')}>Long Break</Button>
+				</div>
+				<p className='mb-4 tabular-nums scroll-m-20 text-4xl font-extrabold lg:text-7xl'>
+					{Math.floor(timeLeft / 60)}:{('0' + (timeLeft % 60)).slice(-2)}
+				</p>
+				<Progress value={progressValue} className='mb-6' />
+				<Button onClick={handleStartClick}>
+					{isActive ? 'Stop' : 'Start'}
+				</Button>
+			</div>
 		</section>
 	)
 }
