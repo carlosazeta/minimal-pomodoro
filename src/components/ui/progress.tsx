@@ -28,7 +28,7 @@ const Progress = React.forwardRef<
 					height: '100%',
 					transform: `scale(${progressValue / 100})`, // Ajustar el tamaño según el valor
 					transformOrigin: 'center',
-					transition: 'transform 0.2s ease-out',
+					transition: 'transform 4s ease-out',
 				}}
 			/>
 		</ProgressPrimitive.Root>

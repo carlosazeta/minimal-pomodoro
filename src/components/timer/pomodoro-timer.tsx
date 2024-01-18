@@ -14,7 +14,7 @@ const getInitialTime = (mode: Mode) => {
 	return modeDurations[mode]
 }
 
-export default function TimerPage() {
+export default function PomodoroTimer() {
 	const router = useRouter()
 	const pathname = usePathname()
 	const searchParams = useSearchParams()

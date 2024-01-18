@@ -34,7 +34,7 @@ export default function NavLinks() {
             h-[48px] grow 
             transform transition duration-200 ease-in-out 
             hover:scale-98 hover:translate-y-0.5 hover:translate-x-1 
-            ${isActive ? 'text-gray-100' : ''}`}
+            ${isActive ? 'text-gray-200' : ''}`}
 					>
 						<LinkIcon className='w-6' />
 						<p className='hidden md:block'>{link.name}</p>
