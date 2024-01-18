@@ -53,6 +53,13 @@ export default function TimerPage() {
 		return ((getInitialTime(mode) - timeLeft) / getInitialTime(mode)) * 100
 	}, [timeLeft, mode])
 
+	useEffect(() => {
+		if (timeLeft === 0) {
+			const audio = new Audio('/notification-sound.mp3')
+			audio.play()
+		}
+	}, [timeLeft])
+
 	return (
 		<section className='flex flex-col items-center'>
 			<h1 className='scroll-m-20 mb-8 text-4xl font-bold tracking-tight lg:text-5xl'>

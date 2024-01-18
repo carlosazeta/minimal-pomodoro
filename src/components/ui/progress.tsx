@@ -15,7 +15,7 @@ const Progress = React.forwardRef<
 		<ProgressPrimitive.Root
 			ref={ref}
 			className={cn(
-				'relative flex items-center justify-center',
+				'relative flex items-center justify-center border-2 border-slate-700',
 				'h-80 w-80 rounded-full bg-slate-800', // Tamaño y forma del círculo
 				className
 			)}
