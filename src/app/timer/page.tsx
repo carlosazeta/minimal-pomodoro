@@ -68,7 +68,7 @@ export default function TimerPage() {
 					{Math.floor(timeLeft / 60)}:{('0' + (timeLeft % 60)).slice(-2)}
 				</p>
 				<Progress value={progressValue} className='mb-6' />
-				<Button onClick={handleStartClick}>
+				<Button onClick={handleStartClick} className='w-full'>
 					{isActive ? 'Stop' : 'Start'}
 				</Button>
 			</div>

@@ -1,12 +1,12 @@
 import { CleanTasks } from '@/components/tasks/cleanTasks'
 import { TasksForm } from '@/components/tasks/form'
 import { TaskList } from '@/components/tasks/list'
-import PomodoroTimer from '@/components/timer/pomodoro-timer'
+import TimerPage from './timer/page'
 
 export default function Home() {
 	return (
 		<main className='flex flex-col lg:flex-row min-h-screen gap-12 md:gap-28 '>
-			<PomodoroTimer />
+			<TimerPage />
 			<section className='flex flex-col items-center mb-14'>
 				<h1 className='scroll-m-20 mb-8 text-4xl font-bold tracking-tight lg:text-5xl'>
 					Tasks
