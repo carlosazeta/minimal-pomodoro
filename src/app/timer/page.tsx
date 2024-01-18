@@ -58,7 +58,7 @@ export default function TimerPage() {
 			<h1 className='scroll-m-20 mb-8 text-4xl font-bold tracking-tight lg:text-5xl'>
 				Timer
 			</h1>
-			<div className='flex flex-col items-center p-10 rounded-lg border-2 border-slate-700 hover:border-slate-500 transition-all duration-300'>
+			<div className='w-96 md:min-w-128 flex flex-col items-center p-10 rounded-lg border-2 border-slate-700 hover:border-slate-500 transition-all duration-300'>
 				<div className='flex gap-2 mb-6'>
 					<Button onClick={() => handleModeChange('pomodoro')}>Pomodoro</Button>
 					<Button onClick={() => handleModeChange('short')}>Short Break</Button>
