@@ -17,12 +17,7 @@ import { Input } from '@/components/ui/input'
 import { useTasksStore } from '@/store/tasks'
 
 const formSchema = z.object({
-	title: z
-		.string()
-		.min(2, {
-			message: 'The task must be at least 2 characters.',
-		})
-		.max(200),
+	title: z.string().max(200),
 })
 
 export function TasksForm() {

@@ -5,9 +5,9 @@ import PomodoroTimer from '@/components/timer/pomodoro-timer'
 
 export default function Home() {
 	return (
-		<main className='flex min-h-screen gap-28'>
+		<main className='flex flex-col lg:flex-row min-h-screen gap-12 md:gap-28 '>
 			<PomodoroTimer />
-			<section className='flex flex-col items-center'>
+			<section className='flex flex-col items-center mb-14'>
 				<h1 className='scroll-m-20 mb-8 text-4xl font-bold tracking-tight lg:text-5xl'>
 					Tasks
 				</h1>
