@@ -1,10 +1,6 @@
 'use client'
 
-import {
-	ClockIcon,
-	BookOpenIcon,
-	MusicalNoteIcon,
-} from '@heroicons/react/24/outline'
+import { ClockIcon, BookOpenIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -15,7 +11,6 @@ const links = [
 		href: '/tasks',
 		icon: BookOpenIcon,
 	},
-	{ name: 'Music', href: '/music', icon: MusicalNoteIcon },
 ]
 
 export default function NavLinks() {
@@ -34,7 +29,7 @@ export default function NavLinks() {
             h-[48px] grow 
             transform transition duration-200 ease-in-out 
             hover:scale-98 hover:translate-y-0.5 hover:translate-x-1 
-            ${isActive ? 'text-gray-200' : ''}`}
+            ${isActive && 'text-gray-100'}`}
 					>
 						<LinkIcon className='w-6' />
 						<p className='hidden md:block'>{link.name}</p>

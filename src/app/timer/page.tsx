@@ -57,6 +57,7 @@ export default function TimerPage() {
 		if (timeLeft === 0) {
 			const audio = new Audio('/notification-sound.mp3')
 			audio.play()
+			setIsActive(false)
 		}
 	}, [timeLeft])
 

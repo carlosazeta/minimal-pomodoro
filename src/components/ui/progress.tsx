@@ -16,7 +16,7 @@ const Progress = React.forwardRef<
 			ref={ref}
 			className={cn(
 				'relative flex items-center justify-center border-2 border-slate-700',
-				'h-80 w-80 rounded-full bg-slate-800', // Tamaño y forma del círculo
+				'h-80 w-80 rounded-full bg-slate-800',
 				className
 			)}
 			{...props}
@@ -26,7 +26,7 @@ const Progress = React.forwardRef<
 				style={{
 					width: '100%',
 					height: '100%',
-					transform: `scale(${progressValue / 100})`, // Ajustar el tamaño según el valor
+					transform: `scale(${progressValue / 100})`,
 					transformOrigin: 'center',
 					transition: 'transform 4s ease-out',
 				}}

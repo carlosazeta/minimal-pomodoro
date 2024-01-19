@@ -5,7 +5,7 @@ export default function SideNav() {
 	return (
 		<div className='flex h-full flex-col px-3 py-4 md:px-2 md:py-0'>
 			<Link
-				className='mb-2 h-20 items-end justify-center p-4  scroll-m-20 text-xl font-semibold tracking-tight md:flex md:h-20 md:justify-start hidden'
+				className='text-center items-end justify-center p-4  scroll-m-20 text-xl font-semibold tracking-tight md:flex md:h-20 md:justify-start'
 				href='/'
 			>
 				minimal_pomodoro
